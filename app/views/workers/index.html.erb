@@ -1,0 +1,46 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Workers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @workers.each do |worker| %>
+      <tr>
+        <td><%=worker.name%>&nbsp;</td>
+        <td><%= link_to 'Show', worker %></td>
+        <td><%= link_to 'Edit', edit_worker_path(worker) %></td>
+        <td><%= link_to 'Destroy', worker, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Worker', new_worker_path %>
+
+<br/>
+<hr/>
+<% 5.times do |i|%>
+<%= i %> times to output the result.<br/>
+<% end %>
+
+<hr/>
+<h3>Session</h3>
+<%= debug session %>
+<h3>Params</h3>
+<%= debug params %>
+<h3>Request</h3>
+<%= debug request %>
+<h3>Response</h3>
+<%= debug response %>
+<h3>headers</h3>
+<%= debug headers %>
+<h3>flash</h3>
+<%= debug flash %>

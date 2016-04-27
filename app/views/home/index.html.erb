@@ -1,0 +1,6 @@
+<%= @hello %> <%= session[:username] %>
+
+
+<%Worker.columns.map { |col|%>
+    <br><br/>worker entity columns <b><%=col.name%></b>
+<%}%>
